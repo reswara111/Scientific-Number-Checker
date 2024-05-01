@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/originals/12/b0/17/12b0176f911f2f0dd724c9716e893e41.jpg'); /* Ubah 'background.jpg' sesuai dengan nama file gambar Anda */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            color: #333;
+        }
+        .footer {
+            margin-top: 50px;
+            color: #555;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scientific Number Checker</h1>
+        <label for="numberInput">Enter a scientific number:</label><br>
+        <input type="text" id="numberInput" placeholder="e.g., 1.23e4"><br>
+        <button onclick="checkScientificNumber()">Check</button>
+        <div id="result"></div>
+    </div>
+    <div class="footer">
+        <p>Valda Palembatas 221011060128</p>
+    </div>
+
+    <script>
+        function checkScientificNumber() {
+            var input = document.getElementById("numberInput").value;
+            var scientificRegex = /^-?\d+(?:\.\d+)?(?:e(?:-|\+)?\d+)?$/i;
+
+            if (scientificRegex.test(input)) {
+                document.getElementById("result").innerHTML = "Valid scientific number!";
+            } else {
+                document.getElementById("result").innerHTML = "Not a valid scientific number. Please enter a number in scientific notation.";
+            }
+        }
+    </script>
+</body>
+</html>
